@@ -6,7 +6,14 @@
 /*   By: tkubanyc <tkubanyc@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/16 16:40:34 by tkubanyc          #+#    #+#             */
-/*   Updated: 2024/04/16 16:53:19 by tkubanyc         ###   ########.fr       */
+/*   Updated: 2024/04/17 12:54:24 by tkubanyc         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
+#include <stdio.h>
+
+int	main()
+{
+	printf("Hello World. I am a CLIENT");
+	return (0);
+}
