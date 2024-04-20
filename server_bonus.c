@@ -6,7 +6,7 @@
 /*   By: tkubanyc <tkubanyc@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/19 12:14:31 by tkubanyc          #+#    #+#             */
-/*   Updated: 2024/04/19 18:41:51 by tkubanyc         ###   ########.fr       */
+/*   Updated: 2024/04/20 10:07:18 by tkubanyc         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,29 +15,27 @@
 static void	signal_handler(int signal, siginfo_t *info, void *context)
 {
 	static int	bit_counter;
-	static char	message;
-	(void)info;
-	(void)context;
+	static char	symbol;
 
+	(void)context;
 	if (signal == SIGUSR1)
-		message = (message << 1) | 0;
+		symbol = (symbol << 1) | 0;
 	else if (signal == SIGUSR2)
-		message = (message << 1) | 1;
+		symbol = (symbol << 1) | 1;
 	else
 		return ;
 	bit_counter++;
 	if (bit_counter == 8)
 	{
-		if (message == '\0')
+		if (symbol == '\0')
 		{
 			ft_printf("\n");
-			ft_printf("Client PID: %d\n", info->si_pid);
 			kill(info->si_pid, SIGUSR1);
 		}
 		else
-			ft_printf("%c", message);
+			ft_printf("%c", symbol);
 		bit_counter = 0;
-		message = 0;
+		symbol = 0;
 	}
 }
 

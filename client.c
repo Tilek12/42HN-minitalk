@@ -6,14 +6,15 @@
 /*   By: tkubanyc <tkubanyc@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/16 16:40:34 by tkubanyc          #+#    #+#             */
-/*   Updated: 2024/04/19 16:49:31 by tkubanyc         ###   ########.fr       */
+/*   Updated: 2024/04/20 10:00:21 by tkubanyc         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "minitalk.h"
 
-static void	char_to_bit_array(char c, int bit_array[8])
+static void	send_message(int pid, char c)
 {
+	int	bit_array[8];
 	int	i;
 
 	i = 0;
@@ -22,12 +23,6 @@ static void	char_to_bit_array(char c, int bit_array[8])
 		bit_array[7 - i] = (c >> i) & 1;
 		i++;
 	}
-}
-
-static void	send_bit_array(int pid, int bit_array[8])
-{
-	int	i;
-
 	i = 0;
 	while (i < 8)
 	{
@@ -42,9 +37,8 @@ static void	send_bit_array(int pid, int bit_array[8])
 
 int	main(int argc, char *argv[])
 {
-	int		pid;
+	int		pid_server;
 	char	*message;
-	int		bit_array[8];
 	int		i;
 
 	i = 0;
@@ -53,18 +47,14 @@ int	main(int argc, char *argv[])
 		ft_printf("Follow this rule: %s <pid> <message>", argv[0]);
 		return (1);
 	}
-	pid = ft_atoi(argv[1]);
+	pid_server = ft_atoi(argv[1]);
 	message = argv[2];
 	while (message[i])
 	{
-		char_to_bit_array(message[i], bit_array);
-		send_bit_array(pid, bit_array);
+		send_message(pid_server, message[i]);
 		i++;
 	}
 	if (message[i] == '\0')
-	{
-		char_to_bit_array('\0', bit_array);
-		send_bit_array(pid, bit_array);
-	}
+		send_message(pid_server, '\0');
 	return (0);
 }

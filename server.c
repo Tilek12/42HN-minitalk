@@ -6,7 +6,7 @@
 /*   By: tkubanyc <tkubanyc@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/16 16:10:10 by tkubanyc          #+#    #+#             */
-/*   Updated: 2024/04/19 16:49:32 by tkubanyc         ###   ########.fr       */
+/*   Updated: 2024/04/20 12:27:05 by tkubanyc         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,23 +15,23 @@
 static void	signal_handler(int signal)
 {
 	static int	bit_counter;
-	static char	message;
+	static char	symbol;
 
 	if (signal == SIGUSR1)
-		message = (message << 1) | 0;
+		symbol = (symbol << 1) | 0;
 	else if (signal == SIGUSR2)
-		message = (message << 1) | 1;
+		symbol = (symbol << 1) | 1;
 	else
 		return ;
 	bit_counter++;
 	if (bit_counter == 8)
 	{
-		if (message == '\0')
+		if (symbol == '\0')
 			ft_printf("\n");
 		else
-			ft_printf("%c", message);
+			ft_printf("%c", symbol);
 		bit_counter = 0;
-		message = 0;
+		symbol = 0;
 	}
 }
 
