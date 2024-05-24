@@ -6,12 +6,12 @@
 #    By: tkubanyc <tkubanyc@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2024/04/16 16:41:38 by tkubanyc          #+#    #+#              #
-#    Updated: 2024/04/19 15:36:24 by tkubanyc         ###   ########.fr        #
+#    Updated: 2024/04/24 21:02:05 by tkubanyc         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
 CC 		= cc
-CFLAGS 	= -Wall -Wextra -Werror
+CFLAGS 	= -Wall -Wextra -Werror -g
 
 SERVER_SRC 	= server.c
 CLIENT_SRC 	= client.c

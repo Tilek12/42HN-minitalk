@@ -6,7 +6,7 @@
 /*   By: tkubanyc <tkubanyc@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/19 12:14:09 by tkubanyc          #+#    #+#             */
-/*   Updated: 2024/04/20 12:13:35 by tkubanyc         ###   ########.fr       */
+/*   Updated: 2024/04/29 12:21:17 by tkubanyc         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,7 +15,7 @@
 static void	show_report(int signal)
 {
 	if (signal == SIGUSR1)
-		ft_printf("----Message received by the Server----\n");
+		ft_printf("\n----Message is received by the Server----\n\n");
 }
 
 static void	send_message(int pid, char c)
@@ -36,9 +36,24 @@ static void	send_message(int pid, char c)
 			kill(pid, SIGUSR1);
 		else
 			kill(pid, SIGUSR2);
-		usleep(100);
+		usleep(200);
 		i++;
 	}
+}
+
+static int	pid_check(char *str)
+{
+	int	i;
+
+	i = 0;
+	while (str[i])
+	{
+		if (ft_isdigit(str[i]) == 0)
+			return (-1);
+		else if (ft_isdigit(str[i]) == 1)
+			i++;
+	}
+	return (1);
 }
 
 int	main(int argc, char *argv[])
@@ -48,9 +63,11 @@ int	main(int argc, char *argv[])
 	int		i;
 
 	i = 0;
-	if (argc != 3)
+	if ((argc != 3) || (pid_check(argv[1]) == (-1)))
 	{
-		ft_printf("Follow this rule: %s <pid> <message>", argv[0]);
+		ft_printf("\n---Follow this rule: %s <pid> <message>---\n", argv[0]);
+		ft_printf("---------For long <message> use double quotes---------\n");
+		ft_printf("------------<pid> must contain only numbers-----------\n\n");
 		return (1);
 	}
 	signal(SIGUSR1, show_report);
