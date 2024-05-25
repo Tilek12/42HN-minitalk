@@ -1,8 +1,16 @@
 # 42Heilbronn :desktop_computer: :de:
 
-## Project - Minitalk :computer: :arrows_counterclockwise: :desktop_computer:
+<p align="center">
+  <img src="https://github.com/Tilek12/42-project-badges/blob/main/badges/minitalkm.png">
+</p>
 
-### :white_check_mark: **125/125**
+<h1 align="center">
+ Project - Minitalk :computer: :arrows_counterclockwise: :desktop_computer:
+</h1>
+
+<h2 align="center">
+ :white_check_mark: 125/125
+</h2>
 
 ### :green_circle: **Mandatory Part**
 
@@ -53,7 +61,7 @@ functions:
 
 -------------------------------------------------------------------------------
 
-### :yellow_circle: **Bonus part**
+### :star: **Bonus part**
 
 ### :eight_pointed_black_star: Bonus list:
 - The server acknowledges every message received by sending back a signal to the
