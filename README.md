@@ -2,11 +2,11 @@
 
 ## Project - Minitalk :computer: :arrows_counterclockwise: :desktop_computer:
 
-:white_check_mark: **125/125**
+### :white_check_mark: **125/125**
 
-:green_circle: **Mandatory Part**
+### :green_circle: **Mandatory Part**
 
-:eight_spoked_asterisk: A communication program in the form of a **client** and a **server**.
+### :eight_spoked_asterisk: A communication program in the form of a **client** and a **server**.
 - The server must be started first. After its launch, it has to print its PID.
 - The client takes two parameters:
   - The server PID.
@@ -24,7 +24,7 @@ needing to restart.
 UNIX signals.
 - You can only use these two signals: **SIGUSR1** and **SIGUSR2**.
 
-:eight_spoked_asterisk: **Project instructions**
+### :eight_spoked_asterisk: **Project instructions**
 
 - Name your executable files client and server.
 - You have to turn in a Makefile which will compile your source files. It must not
@@ -53,9 +53,9 @@ functions:
 
 -------------------------------------------------------------------------------
 
-:yellow_circle: **Bonus part**
+### :yellow_circle: **Bonus part**
 
-:eight_pointed_black_star: Bonus list:
+### :eight_pointed_black_star: Bonus list:
 - The server acknowledges every message received by sending back a signal to the
 client.
 - Unicode characters support!
