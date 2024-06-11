@@ -1,4 +1,4 @@
-# 42Heilbronn :desktop_computer: :de:
+# :desktop_computer: 42Heilbronn :de:
 
 <p align="center">
   <img src="https://github.com/Tilek12/42-project-badges/blob/main/badges/minitalkm.png">
@@ -12,7 +12,9 @@
  :white_check_mark: 125/125
 </h2>
 
-### :green_circle: **Mandatory Part**
+## :clipboard: Project info: [subject](https://github.com/Tilek12/42HN-minitalk/blob/master/.git_docs_minitalk/en.subject_minitalk.pdf)
+
+## :green_circle: **Mandatory Part**
 
 ### :eight_spoked_asterisk: A communication program in the form of a **client** and a **server**.
 - The server must be started first. After its launch, it has to print its PID.
@@ -61,7 +63,7 @@ functions:
 
 -------------------------------------------------------------------------------
 
-### :star: **Bonus part**
+## :star: **Bonus part**
 
 ### :eight_pointed_black_star: Bonus list:
 - The server acknowledges every message received by sending back a signal to the
